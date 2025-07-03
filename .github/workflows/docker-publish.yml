@@ -3,7 +3,7 @@ name: Build and Push Docker image
 on:
   push:
     branches:
-      - master     # mainブランチにpushされたら動く
+      - master  # ← 今 master でやってるなら master
 
 jobs:
   build:
