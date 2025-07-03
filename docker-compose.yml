@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  tomcatserver:
+    build: .
+    container_name: tomcat-container
+    ports:
+      - "8080:8080"
