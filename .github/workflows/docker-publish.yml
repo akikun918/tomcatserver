@@ -32,8 +32,8 @@ jobs:
         username: opc
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          podman login docker.io -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          podman pull ${{ secrets.DOCKER_USERNAME }}/tomcatserver:latest
-          podman stop tomcat-container || true
-          podman rm tomcat-container || true
-          podman run -d --name tomcat-container -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/tomcatserver:latest
+         podman login docker.io -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+         podman pull docker.io/${{ secrets.DOCKER_USERNAME }}/tomcatserver:latest
+         podman stop tomcat-container || true
+         podman rm tomcat-container || true
+         podman run -d --name tomcat-container -p 8080:8080 docker.io/${{ secrets.DOCKER_USERNAME }}/tomcatserver:latest
